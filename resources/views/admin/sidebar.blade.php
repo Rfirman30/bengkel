@@ -99,14 +99,14 @@
     </div>
 
     <!-- Nav Item - Pages Collapse Menu -->
-    @role('admin')
+    
         <!-- Nav Item - Tables -->
         <li class="nav-item active">
-            <a class="nav-link" href="tables.html">
+            <a class="nav-link" href="{{ route('index-page') }}">
                 <i class="fas fa-fw fa-table"></i>
-                <span>Tables</span></a>
+                <span>Landing Page</span></a>
         </li>
-    @endrole
+
 
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
