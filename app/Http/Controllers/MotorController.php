@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Motor;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class MotorController extends Controller
 {
