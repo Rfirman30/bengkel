@@ -9,17 +9,17 @@
                     <div class="form-group">
                         <label for="NAMA">Nama Service</label>
                         <input type="text" name="nama_service" value="{{ $service->nama_service }}" class="form-control"
-                            placeholder="">
+                            placeholder=""readonly>
                     </div>
                     <div class="form-group">
                         <label for=>Harga Service</label>
                         <input type="text" name="harga_service" value="{{ $service->harga_service }}"
-                            class="form-control" placeholder="">
+                            class="form-control" placeholder=""readonly>
                     </div>
 
                     <div class="form-group mt-2">
-                        <a href="{{ route('service.index') }}">
-                            << Kembali>>
+                        <a class="btn btn-info" title="Kembali" href=" {{ url('/service') }}">
+                            <i class="bi bi-arrow-left-square"> Kembali</i>
                         </a>
                     </div>
                 </div>
