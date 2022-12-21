@@ -1,6 +1,7 @@
 @extends('admin.master')
 @section('content')
-    <div class="col-md-auto">
+    <div class="container mt-5">
+        <h1>Data Montir</h1>
         <div class="form-group">
             <label>ID Montir</label>
             <input type="text" name="name" class="form-control" placeholder="id" value="{{$ar_montir->id}}"readonly>
@@ -26,8 +27,9 @@
             <input type="text" name="name" class="form-control" placeholder="alamat" value="{{$ar_montir->alamat}}"readonly>
         </div>
 
-        <a href="{{ url('/montir') }}">
-        << </a>
+        <a class="btn btn-info" title="Kembali" href=" {{ url('/montir') }}">
+            <i class="bi bi-arrow-left-square"> Kembali</i>
+        </a>
     </div>
 
 @endsection

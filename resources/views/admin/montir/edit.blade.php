@@ -6,7 +6,7 @@ $ar_gender = ['L','P'];
 @endphp
     <section>
         <div class="container mt-5">
-            <h1> Booking </h1> 
+            <h1> Edit Montir </h1> 
             @if ($errors->any())
                     <div class="alert alert-danger">
                         <ul>
@@ -48,12 +48,13 @@ $ar_gender = ['L','P'];
                             <input type="text" name="nomor_telepon" class="form-control" value="{{$montir->nomor_telepon}}">
                         </div>
                         <div class="form-group mt-2">
-                            <button type="submit" class="btn btn-primary">Update</button>
+                            <a class="btn btn-info" title="Kembali" href=" {{ url('/montir') }}">
+                                <i class="bi bi-arrow-left-square"> Kembali</i>
+                            </a>
+
+                            <button type="submit" class="btn btn-primary"> Simpan </button>
                         </div>
-                        <div class="form-group mt-2">
-                            <a href="{{ route('montir.index') }}">
-                                 << </a>
-                        </div>
+                        
                     </form>
                 </div>
             </div>

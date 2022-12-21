@@ -31,12 +31,13 @@
                             <input type="text" name="merek_motor" class="form-control" placeholder="">
                         </div>
                         <div class="form-group mt-2">
+                            <a class="btn btn-info" title="Kembali" href=" {{ url('/motor') }}">
+                                <i class="bi bi-arrow-left-square"> Kembali</i>
+                            </a>
+
                             <button type="submit" class="btn btn-primary">Simpan</button>
                         </div>
-                        <div class="form-group mt-2">
-                            <a href="{{route('motor.index')}}">
-                                 << Kembali >> </a>
-                        </div>
+                        
                     </form>
                 </div>
             </div>

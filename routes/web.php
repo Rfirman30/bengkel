@@ -13,6 +13,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\User\DataUserController;
 use App\Http\Controllers\User\MotorUserController;
 use App\Http\Controllers\User\OrderUserController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------

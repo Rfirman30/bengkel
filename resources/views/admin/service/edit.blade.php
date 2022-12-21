@@ -28,12 +28,13 @@
                             <input type="text" name="harga_service" class="form-control" value="{{$service->harga_service}}" placeholder="">
                         </div>
                         <div class="form-group mt-2">
+                        <a class="btn btn-info" title="Kembali" href=" {{ url('/service') }}">
+                            <i class="bi bi-arrow-left-square"> Kembali</i>
+                        </a>
+
                             <button type="submit" class="btn btn-primary">Simpan</button>
                         </div>
-                        <div class="form-group mt-2">
-                            <a href="{{route('service.index')}}">
-                                 << Kembali >> </a>
-                        </div>
+                        
                     </form>
                 </div>
             </div>

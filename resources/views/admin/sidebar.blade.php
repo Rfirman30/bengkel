@@ -1,20 +1,32 @@
 <!-- Sidebar -->
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
+    @role('admin')
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('home') }}">
         <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-laugh-wink"></i>
         </div>
         <div class="sidebar-brand-text mx-3">Bengkelin Admin</div>
     </a>
+    @endrole
+
+    @role('user')
+    <!-- Sidebar - Brand -->
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('home') }}">
+        <div class="sidebar-brand-icon rotate-n-15">
+            <i class="fas fa-laugh-wink"></i>
+        </div>
+        <div class="sidebar-brand-text mx-3">Bengkelin User</div>
+    </a>
+    @endrole
 
     <!-- Divider -->
     <hr class="sidebar-divider my-0">
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="{{ route('home') }}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
     </li>
@@ -87,14 +99,14 @@
     </div>
 
     <!-- Nav Item - Pages Collapse Menu -->
-    @role('admin')
+    
         <!-- Nav Item - Tables -->
         <li class="nav-item active">
-            <a class="nav-link" href="tables.html">
+            <a class="nav-link" href="{{ route('index-page') }}">
                 <i class="fas fa-fw fa-table"></i>
-                <span>Tables</span></a>
+                <span>Landing Page</span></a>
         </li>
-    @endrole
+
 
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
