@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Motor;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -44,7 +45,8 @@ class MotorController extends Controller
             'nomor_motor' => 'required',
             'merek_motor' => 'required'
         ]);
-        Motor::create($request->all());
+        $data = User::find(Auth::user()->id);
+        $data->motor()->create($request->all());
 
         return redirect()->route('motor.index')
             ->with('Berhasil menambahkan data Motor');
