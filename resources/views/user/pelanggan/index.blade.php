@@ -26,7 +26,7 @@
                                 <th>Nama Pelanggan</th>
                                 <th>Nomor KTP</th>
                                 <th>Alamat</th>
-                                <th>Motor</th>
+                                <th>Plat Motor</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
