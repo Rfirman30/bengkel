@@ -3,7 +3,7 @@
 @section('content')
     <section>
         <div class="container mt-5">
-            <h1> Booking </h1>
+            <h1> Montir </h1>
             <div class="row">
                 <div class="col-lg-8">
                     <form action="{{ route('montir.store') }}" method="POST" enctype="multipart/form-data">
@@ -38,11 +38,11 @@
                             <input type="text" name="nomor_telepon" class="form-control" placeholder="08**********">
                         </div>
                         <div class="form-group mt-2">
-                            <button type="submit" class="btn btn-primary" onclick="myallert()"> >> Tambah Montir << </button>
-                        </div>
-                        <div class="form-group mt-2">
-                            <a href="{{ route('montir.index') }}">
-                                << </a>
+                            <a class="btn btn-info" title="Kembali" href=" {{ url('/montir') }}">
+                                <i class="bi bi-arrow-left-square"> Kembali</i>
+                            </a>
+                            
+                            <button type="submit" class="btn btn-primary" onclick="myallert()"> Tambah Montir </button>
                         </div>
                     </form>
                 </div>

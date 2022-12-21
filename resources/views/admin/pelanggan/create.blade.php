@@ -30,12 +30,13 @@
                             </select>
                         </div>
                         <div class="form-group mt-2">
+                        <a class="btn btn-info" title="Kembali" href=" {{ url('/pelanggan') }}">
+                            <i class="bi bi-arrow-left-square"> Kembali</i>
+                        </a>
+
                             <button type="submit" class="btn btn-primary" onclick="myallert()"> Tambah Pelanggan </button>
                         </div>
-                        <div class="form-group mt-2">
-                            <a href="{{ route('pelanggan.index') }}">
-                                << </a>
-                        </div>
+                        
                     </form>
                 </div>
             </div>
