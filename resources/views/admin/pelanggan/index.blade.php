@@ -28,7 +28,7 @@
                                 <th>Nama Pelanggan</th>
                                 <th>No KTP</th>
                                 <th>Alamat Pelanggan</th>
-                                <th>Id Motor</th>
+                                <th>Plat Motor</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -40,7 +40,7 @@
                                     <td>{{ $plgn->nama_pelanggan }}</td>
                                     <td>{{ $plgn->no_ktp }}</td>
                                     <td>{{ $plgn->alamat_pelanggan }}</td>
-                                    <td>{{ $plgn->motor_id }}</td>
+                                    <td>{{ $plgn->motor->nomor_motor }}</td>
                                     <td>
                                         <form action="{{ route('pelanggan.destroy', $plgn->id) }}" method="POST">
                                             <a href="{{ route('pelanggan.show', $plgn->id) }}"

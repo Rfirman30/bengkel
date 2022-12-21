@@ -58,7 +58,7 @@
                                                 </svg>
                                             </a>
 
-                                            <a href="{{ route('motor.edit', $mtr->id) }}" class="btn btn-warning"
+                                            <a href="{{ route('motor.edit', $mtr->id) }}" class="btn btn-warning btn-sm"
                                                 title="Edit detail">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                     fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
@@ -69,7 +69,7 @@
                                                 </svg>
                                             </a>
 
-                                            <button type="submit" class="btn btn-danger" title="Hapus data"
+                                            <button type="submit" class="btn btn-danger btn-sm" title="Hapus data"
                                                 onclick="return confirm('Yakin Di Hapus?')">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                     fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
