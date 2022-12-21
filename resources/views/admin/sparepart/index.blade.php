@@ -49,7 +49,7 @@
                                         <form method="POST" action="{{ route('sparepart.destroy', $row->id) }}">
                                             @csrf
                                             @method('DELETE')
-                                            <a class="btn btn-info" title="Detail Sparepart"
+                                            <a class="btn btn-info btn-sm" title="Detail Sparepart"
                                                 href=" {{ route('sparepart.show', $row->id) }}">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                     fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
@@ -60,7 +60,7 @@
                                                 </svg>
                                             </a>
 
-                                            <a class="btn btn-warning" title="Edit Sparepart"
+                                            <a class="btn btn-warning btn-sm" title="Edit Sparepart"
                                                 href=" {{ route('sparepart.edit', $row->id) }}">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                     fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
@@ -71,7 +71,7 @@
                                                 </svg>
                                             </a>
 
-                                            <button type="submit" class="btn btn-danger" title="Hapus Sparepart"
+                                            <button type="submit" class="btn btn-danger btn-sm" title="Hapus Sparepart"
                                                 onclick="return confirm('Anda yakin akan menghapus data yang dipilih?')">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                     fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
