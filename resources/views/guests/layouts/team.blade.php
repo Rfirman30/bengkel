@@ -1,4 +1,4 @@
-<section id="team" class="team">
+<!-- <section id="team" class="team">
       <div class="container">
 
         <div class="section-title">
@@ -61,4 +61,4 @@
         </div>
 
       </div>
-    </section>
+    </section> -->

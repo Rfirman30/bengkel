@@ -8,12 +8,12 @@
             <div class="col-lg-6 pt-4 pt-lg-0">
                 <h3>Tentang Bengkelin</h3>
                 <p>
-                    Bengkelin - Service Motor Panggilan yang menawarkan jasa service motor panggilan di lokasi. cukup
-                    pesan layanan service dan buat janji lalu tunggu teknisi Bengkelin datang ke tempat Anda.
+                    Bengkelin merupakan aplikasi pemesanan jasa service motor yang dapat membantu pelanggan membuat reservasi
+                    dengan mudah dan cepat.
                 </p>
                 <ul>
-                    <li><i class="bx bx-check-double"></i> Aman</li>
-                    <li><i class="bx bx-check-double"></i> Terpercaya</li>
+                    <li><i class="bx bx-check-double"></i> Menghindari antrian yang menumpuk</li>
+                    <li><i class="bx bx-check-double"></i> Data tersimpan lebih rapi</li>
                 </ul>
                 <div class="row icon-boxes">
                     <div class="col-md-6">
@@ -23,8 +23,8 @@
                     </div>
                     <div class="col-md-6 mt-4 mt-md-0">
                         <i><img src="{{ asset('img/icon/schedule.png') }}"></i>
-                        <h4>Pilih Tanggal,Waktu dan Lokasi</h4>
-                        <p>Mekanik akan datang sesuai tanggal, waktu dan tempat pilihan kamu</p>
+                        <h4>Pilih Tanggal dan Waktu</h4>
+                        <p>Pelanggan bisa memilih tanggal dan waktu reservasi</p>
                     </div>
                 </div>
             </div>
