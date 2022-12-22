@@ -11,7 +11,7 @@ class MontirExport implements FromCollection, WithHeadings
 {
     public function collection()
     {
-      $ar_montir = DB::table('montirs')->select('name','gender','no_telp','alamat')->get();
+      $ar_montir = DB::table('montir')->select('nama','gender','nomor_telepon','alamat')->get();
       return $ar_montir;
     }
 
