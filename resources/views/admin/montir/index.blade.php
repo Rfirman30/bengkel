@@ -55,7 +55,7 @@
                                     <td>{{ $mntr->alamat }}</td>
                                     <td>{{ $mntr->nomor_telepon }}</td>
                                     <td>
-                                        <form action="{{ route('montir.destroy', $mntr->id) }}" method="POST">
+                                        <form action="{{ route('montir.destroy', $mntr->id) }}" method="POST" id="formDelete">
                                             <!-- <a href="{{ route('montir.show', $mntr->id) }}"
                                                 class="btn btn-info btn-sm" title="Detail Data">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">

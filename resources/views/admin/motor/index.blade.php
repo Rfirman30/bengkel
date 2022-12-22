@@ -56,7 +56,7 @@
                                     <td>{{ $mtr->nomor_motor }}</td>
                                     <td>{{ $mtr->merek_motor }}</td>
                                     <td>
-                                        <form method="POST" action="{{ route('motor.destroy', $mtr->id) }}">
+                                        <form method="POST" action="{{ route('motor.destroy', $mtr->id) }}" id="formDelete">
                                             @csrf
                                             @method('DELETE')
                                             <!-- <a href="{{ route('motor.show', $mtr->id) }}" class="btn btn-info btn-sm"

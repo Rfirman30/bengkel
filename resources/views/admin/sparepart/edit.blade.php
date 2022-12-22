@@ -36,6 +36,8 @@
                             <input type="file" name="foto_barang" class="form-control">
                             @if(!empty($sparepart->foto_barang)) 
                             <img src="{{url('admin/img')}}/{{$sparepart->foto_barang}}"  alt="" width="10%" >
+                            @else
+                            <img src="{{ url('admin/img/noimg.png') }}" width="10%" >
                             @endif
                         </div>
                         <div class="form-group mt-2">

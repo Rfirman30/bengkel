@@ -53,7 +53,7 @@
                                     <td>{{ $supplier->no_telp }}</td>
                                     <td>{{ $supplier->alamat }}</td>
                                     <td>
-                                        <form method="POST" action="{{route('supplier.destroy', $supplier->id)}}">
+                                        <form method="POST" action="{{route('supplier.destroy', $supplier->id)}}" id="formDelete">
                                         @csrf
                                         @method('DELETE')
                                         <!-- <a href="{{ route('supplier.show', $supplier->id) }}"

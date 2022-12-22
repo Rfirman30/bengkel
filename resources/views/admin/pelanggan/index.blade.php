@@ -53,7 +53,7 @@
                                     <td>{{ $plgn->no_ktp }}</td>
                                     <td>{{ $plgn->alamat_pelanggan }}</td>
                                     <td>
-                                        <form action="{{ route('pelanggan.destroy', $plgn->id) }}" method="POST">
+                                        <form action="{{ route('pelanggan.destroy', $plgn->id) }}" method="POST" id="formDelete">
                                             <!-- <a href="{{ route('pelanggan.show', $plgn->id) }}"
                                                 class="btn btn-info btn-sm" title="Detail Data">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">

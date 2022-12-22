@@ -48,7 +48,7 @@
       @auth
       <a href=""></a>
       @else
-      <a href="/login" class="btn-get-started scrollto">Log-in</a>
+      <a href="{{route('login')}}" class="btn-get-started scrollto">Log-in</a>
       @endauth
     </div>
   </section>

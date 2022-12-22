@@ -15,7 +15,7 @@
             </div>
             <div class="card-body">
                 <button type="button" class="btn btn-primary mb-3" data-toggle="modal" data-target="#exampleModal">
-                    Add data Pelanggan
+                    Booking
                 </button>
                 {{-- table --}}
                 <div class="table-responsive">
@@ -57,7 +57,14 @@
                 <form action="{{ route('make-service') }}" method="post">
                     @csrf
                     <div class="modal-body">
-                        <div class="form-group">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Nama Pelanggan</label>
+                        <input type="text" class="form-control" name="pelanggan"
+                        @foreach (Auth::user()->dataPelanggan as $item)
+                            value="{{ $item->id }}" >
+                        @endforeach
+                        </div>
+                        <!-- <div class="form-group">
                             <label for="exampleInputEmail1">Nama Pelanggan</label>
                             <select name="pelanggan" class="form-control form-control-lg">
                                 <option disabled selected>Pilih Pelanggan</option>
@@ -65,10 +72,10 @@
                                     <option value="{{ $item->id }}">{{ $item->nama_pelanggan }}</option>
                                 @endforeach
                             </select>
-                        </div>
+                        </div> -->
                         <div class="form-group">
                             <label for="exampleInputEmail1">Servis</label>
-                            <select name="service" class="form-control form-control-lg">
+                            <select name="service" class="form-control form-control-md">
                                 <option disabled selected>Pilih Service</option>
                                 @foreach ($service as $item)
                                     <option value="{{ $item->id }}">{{ $item->nama_service }}</option>
@@ -77,7 +84,7 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Nama Montir</label>
-                            <select name="montir" class="form-control form-control-lg">
+                            <select name="montir" class="form-control form-control-md">
                                 <option disabled selected>Pilih Montir</option>
                                 @foreach ($montir as $item)
                                     <option value="{{ $item->id }}">{{ $item->nama }}</option>
@@ -86,7 +93,7 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Motor</label>
-                            <select name="motor_id" class="form-control form-control-lg">
+                            <select name="motor_id" class="form-control form-control-md">
                                 <option disabled selected>Pilih Motor</option>
                                 @foreach ($motor as $item)
                                     <option value="{{ $item->id }}">{{ $item->merek_motor }}</option>
@@ -102,10 +109,10 @@
                             <label for="exampleInputEmail1">Spare Part</label>
                             <div class="form-group increment">
                                 <div class="input-group">
-                                    <select name="spare[]" class="form-control form-control-lg">
+                                    <select name="spare[]" class="form-control form-control-md">
                                         <option disabled selected>Pilih Spare Part</option>
                                         @foreach ($sparePart as $item)
-                                            <option value="{{ $item->id }}">{{ $item->merek }}</option>
+                                            <option value="{{ $item->id }}">{{$item->nama_sparepart}} {{ $item->merek }}</option>
                                         @endforeach
                                     </select>
                                     <div class="input-group-append">
@@ -116,10 +123,10 @@
                             </div>
                             <div class="clone invisible">
                                 <div class="input-group mt-2">
-                                    <select name="spare[]" class="form-control form-control-lg">
+                                    <select name="spare[]" class="form-control form-control-md">
                                         <option disabled selected>Pilih Spare Part</option>
                                         @foreach ($sparePart as $item)
-                                            <option value="{{ $item->id }}">{{ $item->merek }}</option>
+                                            <option value="{{ $item->id }}">{{$item->nama_sparepart}} {{ $item->merek }}</option>
                                         @endforeach
                                     </select>
                                     <div class="input-group-append">

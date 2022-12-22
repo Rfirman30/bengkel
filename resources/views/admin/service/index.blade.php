@@ -51,7 +51,7 @@
                                     <td>{{ $service->nama_service }}</td>
                                     <td>Rp. {{ number_format($service->harga_service, 0,',',',') }}</td>
                                     <td>
-                                        <form method="POST" action="{{route('service.destroy', $service->id)}}">
+                                        <form method="POST" action="{{route('service.destroy', $service->id)}}" id="formDelete">
                                         @csrf
                                         @method('DELETE')
                                         <!-- <a href="{{ route('service.show', $service->id) }}" class="btn btn-info btn-sm" title="Detail Data">

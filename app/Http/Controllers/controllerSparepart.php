@@ -118,12 +118,19 @@ class controllerSparepart extends Controller
      */
     public function update(Request $request, Sparepart $sparepart)
     {
+        // $id=Sparepart::select('id');
+        // $foto = DB::table('spare_part')->select('foto_barang')->where('id',$id)->get();
+        // foreach($foto as $f){
+        //     $namaFileFotoLama = $f->foto_barang;
+        // }
+
         if(!empty($request->foto_barang)){
             $fileName = $request->foto_barang->getClientOriginalName();
             $request->foto_barang->move(public_path('admin/img'),$fileName);
         }else{
-            $fileName = ($input['foto_barang']);
-            unset($fileName);
+            // $fileName = ($input['foto_barang']);
+            // unset($fileName);
+            $fileName = $sparepart->foto_barang;
         }
 
         $sparepart->update([

@@ -10,22 +10,21 @@
                         @csrf
                         <div class="form-group">
                             <label for="NAMA">NAMA PELANGGAN</label>
-                            <input type="text" name="nama_pelanggan" class="form-control"placeholder="Nama Pelanggan">
+                            <input type="text" name="nama_pelanggan" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="NAMA">NO KTP</label>
-                            <input type="text" name="no_ktp" class="form-control"placeholder="No KTP">
+                            <input type="text" name="no_ktp" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="NAMA">ALAMAT PELANGGAN</label>
-                            <textarea class="form-control" name="alamat_pelanggan"placeholder="Ex : jakarta selatan, jalan zeni TNI AD V"></textarea>
+                            <textarea class="form-control" name="alamat_pelanggan"></textarea>
                         </div>
                         <div class="form-group mt-2">
+                            <a class="btn btn-info" title="Kembali" href=" {{ route('pelanggan.index') }}">
+                                <i class="bi bi-arrow-left-square"> Kembali</i>
+                            </a>
                             <button type="submit" class="btn btn-primary" onclick="myallert()"> Tambah Pelanggan </button>
-                        </div>
-                        <div class="form-group mt-2">
-                            <a href="{{ route('pelanggan.index') }}">
-                                << </a>
                         </div>
                     </form>
                 </div>

@@ -10,7 +10,7 @@
                         @csrf
                         <div class="form-group">
                             <label for="NAMA">Supplier</label>
-                            <select class="form-control main w-25" name="suppliyer_idsuppliyer">
+                            <select class="form-control main w-80" name="suppliyer_idsuppliyer">
                                     <option selected>-- Pilih supplier --</option>
                                     @foreach ($nama_supplier as $sp)
                                     <option value="{{$sp->id}}">{{$sp->nama}}</option>

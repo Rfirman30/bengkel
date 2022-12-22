@@ -31,11 +31,10 @@
                             <input type="text" name="no_telp" class="form-control" placeholder="">
                         </div>
                         <div class="form-group mt-2">
+                            <a class="btn btn-info" title="Kembali" href="{{ route('supplier.index') }}">
+                                Kembali 
+                            </a>
                             <button type="submit" class="btn btn-primary">Simpan</button>
-                        </div>
-                        <div class="form-group mt-2">
-                            <a href="{{route('supplier.index')}}">
-                                 << Kembali >> </a>
                         </div>
                     </form>
                 </div>

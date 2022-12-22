@@ -62,7 +62,7 @@
                                     <td>{{ $dtlservice->montir->nama }}</td>
                                     <td>{{ $dtlservice->status }}</td>
                                     <td>
-                                        <form method="POST" action="{{ route('detailservice.destroy', $dtlservice->id) }}">
+                                        <form method="POST" action="{{ route('detailservice.destroy', $dtlservice->id) }}" id="formDelete">
                                             @csrf
                                             @method('DELETE')
                                             @if ($dtlservice->status == 'pending')

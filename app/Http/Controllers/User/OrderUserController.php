@@ -26,7 +26,8 @@ class OrderUserController extends Controller
     {
         $motor =  Motor::where('user_id', Auth::user()->id)->get();
         $montir = Montir::all();
-        $sparePart = Sparepart::where('stok', '>', 0)->get();
+        // $sparePart = Sparepart::where('stok', '>', 0)->get();
+        $sparePart = Sparepart::get();
         $service = Service::all();
         if ($request->ajax()) {
             $pelanggan = DetailService::where('user_id', Auth::user()->id)->with('montir', 'pelanggan', 'service')->get();
