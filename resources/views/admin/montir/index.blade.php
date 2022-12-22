@@ -14,6 +14,15 @@
                 <h6 class="m-0 font-weight-bold text-primary">Table Montir</h6>
             </div>
             <div class="card-body">
+                @if ($message = Session::get('success'))
+                <div class="alert alert-success">
+                    <p>{{ $message }}</p>
+                </div>
+                @elseif(session()->has('error'))
+                <div class="alert alert-danger">
+                    {{ session()->get('error') }}
+                </div>
+                @endif
 
                 <a href="{{ route('montir.create') }}" class="btn btn-primary mb-4" title="Tambah Data">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-square" viewBox="0 0 16 16">

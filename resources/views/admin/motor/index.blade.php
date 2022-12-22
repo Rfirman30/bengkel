@@ -15,6 +15,15 @@
             </div>
 
             <div class="card-body">
+                @if ($message = Session::get('success'))
+                <div class="alert alert-success">
+                    <p>{{ $message }}</p>
+                </div>
+                @elseif(session()->has('error'))
+                <div class="alert alert-danger">
+                    {{ session()->get('error') }}
+                </div>
+                @endif
                 <a href="{{ route('motor.create') }}" class="btn btn-primary mb-4" title="Tambah Data">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-plus-square" viewBox="0 0 16 16">
@@ -41,6 +50,7 @@
                         <thead>
                             <tr>
                                 <th>No</th>
+                                <th>Pemilik Motor</th>
                                 <th>Jenis Motor</th>
                                 <th>Plat Motor</th>
                                 <th>Merek Motor</th>
@@ -52,6 +62,7 @@
                             @foreach ($motor as $mtr)
                                 <tr>
                                     <td>{{ ++$i }}</td>
+                                    <td>{{ $mtr->user->name }}</td>
                                     <td>{{ $mtr->jenis_motor }}</td>
                                     <td>{{ $mtr->nomor_motor }}</td>
                                     <td>{{ $mtr->merek_motor }}</td>

@@ -18,8 +18,8 @@ class MotorController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $motor = Motor::paginate(5);
+    {   
+        $motor = Motor::with('user')->get();;
 
         return view('admin.motor.index', compact('motor'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
@@ -106,9 +106,14 @@ class MotorController extends Controller
      */
     public function destroy(Motor $motor)
     {
-        $motor->delete();
-        return redirect()->route('motor.index')
+        try{
+            $motor->delete();
+            return redirect()->route('motor.index')
             ->with('success', 'Data Motor berhasil dihapus');
+        }catch(\Throwable $exception){
+            return back()->with('error', 'Integrity constraint violation: 1451 Cannot delete a parent row');
+        }
+        
     }
 
     public function motorPDF()

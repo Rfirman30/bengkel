@@ -94,7 +94,7 @@ class controllerMontir extends Controller
         ]);
 
         return redirect()->route('montir.index')
-            ->with('success', 'Data Pegawai Berhasil Diubah');
+            ->with('success', 'Data Montir Berhasil Diubah');
     }
 
     /**
@@ -103,10 +103,15 @@ class controllerMontir extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Montir $montir)
     {
-        $ar_montir = Montir::find($id)->delete();
-        return redirect('/montir');
+        try{
+            $montir->delete();
+            return redirect()->route('montir.index')->with('succes','Data montir berhasil dihapus');
+        }catch(\Throwable $exception){
+            return back()->with('error', 'Integrity constraint violation: 1451 Cannot delete a parent row');
+            // return back()->with('error', $exception->getMessage());
+        }
     }
 
     public function montirPDF()

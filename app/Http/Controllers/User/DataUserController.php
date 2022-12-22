@@ -18,9 +18,15 @@ class DataUserController extends Controller
         $this->middleware('role:user');
     }
 
+    public function dataIndex(){
+        $data_pelanggan = Pelanggan::where('user_id', Auth::user()->id)->first();
+        return view('user.pelanggan.index', compact('data_pelanggan'));
+    }
+
     public function dataPelanggan(Request $request)
     {
         $motor =  Motor::where('user_id', Auth::user()->id)->get();
+        //$data_pelanggan = Pelanggan::where('user_id', Auth::user()->id)->first();
 
         if ($motor->isEmpty()) {
             return redirect()->route('index-motor');
@@ -46,7 +52,8 @@ class DataUserController extends Controller
                 ->rawColumns(['action'])
                 ->make(true);
         }
-        return view('user.pelanggan.index', compact('motor'));
+        // return view('user.pelanggan.index', compact('motor', 'data_pelanggan'));
+        return view('user.pelanggan.index', compact('motor', 'data_pelanggan'));
     }
 
     public function addDataPelanggan(Request $request)

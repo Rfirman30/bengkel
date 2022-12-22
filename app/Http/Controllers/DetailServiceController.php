@@ -131,9 +131,14 @@ class DetailServiceController extends Controller
      */
     public function destroy(DetailService $detailservice)
     {
-        $detailservice->delete();
-        return redirect()->route('detailservice.index')
+        try{
+            $detailservice->delete();
+            return redirect()->route('detailservice.index')
             ->with('success', 'Data detail service berhasil dihapus');
+        }catch(\Throwable $exception){
+            return back()->with('error', 'Integrity constraint violation: 1451 Cannot delete a parent row');
+        }
+        
     }
 
     public function confirm($id)

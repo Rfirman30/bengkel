@@ -101,9 +101,15 @@ class ServiceController extends Controller
      */
     public function destroy(Service $service)
     {
-        $service->delete();
-        return redirect()->route('service.index')
+        try{
+            $pelanggan->delete();
+            $service->delete();
+            return redirect()->route('service.index')
             ->with('success', 'Data service berhasil dihapus');
+        }catch(\Throwable $exception){
+            return back()->with('error', 'Integrity constraint violation: 1451 Cannot delete a parent row');
+        }
+        
     }
 
     public function servicePDF()

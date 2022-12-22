@@ -111,6 +111,7 @@ Route::middleware('auth')->group(function () {
 
     //user
     ///data pelanggan
+    Route::get('data-index-pelanggan', [DataUserController::class, 'dataIndex'])->name('data-index');
     Route::get('data-pelanggan', [DataUserController::class, 'dataPelanggan'])->name('index-pelanggan');
     Route::get('delete/{id}/pelanggan', [DataUserController::class, 'deleteDataPelanggan'])->name('delete-pelanggan');
     Route::post('add-pelanggan', [DataUserController::class, 'addDataPelanggan'])->name('add-pelanggan');

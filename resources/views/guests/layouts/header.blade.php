@@ -28,8 +28,8 @@
             <ul>
                 @auth
                     <li>
-                        <a class="nav-link scrollto" href="/adm"<i
-                            class="bi bi-arrow-right-square"></i>{{ auth()->user()->name }}</a>
+                        <a class="nav-link scrollto" href="/adm"
+                        <i class="bi bi-arrow-right-square"></i>{{ auth()->user()->name }}</a>
                     </li>
                 @else
                     <li>

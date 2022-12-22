@@ -73,9 +73,14 @@ class controllerPelanggan extends Controller
 
     public function destroy(Pelanggan $pelanggan)
     {
-        $pelanggan->delete();
-        return redirect()->route('pelanggan.index')
-            ->with('success', 'Data pelanggan berhasil dihapus');
+        try{
+            $pelanggan->delete();
+            return redirect()->route('pelanggan.index')
+                ->with('success', 'Data pelanggan berhasil dihapus');
+        }catch(\Throwable $exception){
+            return back()->with('error', 'Integrity constraint violation: 1451 Cannot delete a parent row');
+        }
+        
     }
 
     public function pelangganPDF()

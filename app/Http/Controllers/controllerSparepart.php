@@ -153,9 +153,14 @@ class controllerSparepart extends Controller
      */
     public function destroy($id)
     {
-        $ar_sparepart = Sparepart::find($id)->delete();
-        return redirect()->route('sparepart.index')
-                        ->with('success', 'Data Sparepart Berhasil Dihapus');;
+        try{
+            $ar_sparepart = Sparepart::find($id)->delete();
+            return redirect()->route('sparepart.index')
+                            ->with('success', 'Data Sparepart Berhasil Dihapus');;
+        }catch(\Throwable $exception){
+            return back()->with('error', 'Integrity constraint violation: 1451 Cannot delete a parent row');
+        }
+        
     }
 
     public function sparepartPDF()

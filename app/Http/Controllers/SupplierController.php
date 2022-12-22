@@ -103,9 +103,14 @@ class SupplierController extends Controller
      */
     public function destroy(Supplier $supplier)
     {
-        $supplier->delete();
-        return redirect()->route('supplier.index')
+        try{
+            $supplier->delete();
+            return redirect()->route('supplier.index')
             ->with('success', 'Data Supplier berhasil dihapus');
+        }catch(\Throwable $exception){
+            return back()->with('error', 'Integrity constraint violation: 1451 Cannot delete a parent row');
+        }
+        
     }
 
     public function supplierPDF()

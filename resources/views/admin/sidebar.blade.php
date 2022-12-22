@@ -74,8 +74,8 @@
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header"></h6>
+                    <a class="collapse-item" href="{{ route('data-index') }}">Data Pelanggan</a>
                     <a class="collapse-item" href="{{ route('index-motor') }}">Data Motor User</a>
-                    <a class="collapse-item" href="{{ route('index-pelanggan') }}">Data Pelanggan</a>
                 </div>
             </div>
         </li>
