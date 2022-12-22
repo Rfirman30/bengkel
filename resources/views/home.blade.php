@@ -45,7 +45,11 @@
     <div class="container text-center text-md-left" data-aos="fade-up">
       <h1>Welcome to <span>Bengkelin</span></h1>
       <h2></h2>
+      @auth
+      <a href=""></a>
+      @else
       <a href="/login" class="btn-get-started scrollto">Log-in</a>
+      @endauth
     </div>
   </section>
   <!-- End Hero -->
@@ -66,7 +70,7 @@
     <section id="counts" class="counts">
       <div class="container">
 
-        <div class="row">
+        <!-- <div class="row">
 
           <div class="col-lg-3 col-6">
             <div class="count-box">
@@ -100,7 +104,7 @@
             </div>
           </div>
 
-        </div>
+        </div> -->
 
       </div>
     </section><!-- End Counts Section -->
