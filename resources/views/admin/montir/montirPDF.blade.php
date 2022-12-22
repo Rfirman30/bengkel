@@ -18,12 +18,12 @@
     </thead>
     <tbody>
       @php $no= 1; @endphp
-      @foreach($montirs as $row)
+      @foreach($montir as $row)
       <tr>
         <th>{{ $no++ }}</th>
-        <td>{{ $row->name }}</td>
+        <td>{{ $row->nama }}</td>
         <td>{{ $row->gender }}</td>
-        <td>{{ $row->no_telp }}</td>
+        <td>{{ $row->nomor_telepon }}</td>
         <td>{{ $row->alamat }}</td>
       @endforeach
     </tbody>

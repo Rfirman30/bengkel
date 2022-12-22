@@ -17,7 +17,7 @@
     </thead>
     <tbody>
       @php $no= 1; @endphp
-      @foreach($pelanggans as $row)
+      @foreach($pelanggan as $row)
       <tr>
         <th>{{ $no++ }}</th>
         <td>{{ $row->nama_pelanggan }}</td>

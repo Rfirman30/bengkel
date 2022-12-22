@@ -2,11 +2,11 @@
     <div class="container">
 
         <div class="section-title">
-            <h2>Kenapa Bengkelin?</h2>
-            <p></p>
+            <!-- <h2>Kenapa Bengkelin?</h2>
+            <p></p> -->
         </div>
 
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                 <div class="icon-box">
                     <div class="icon"><i><img src="{{ asset('img/icon/mechanic.png') }}"></i></div>
@@ -32,7 +32,7 @@
                 </div>
             </div>
 
-        </div>
+        </div> -->
 
     </div>
 </section>

@@ -65,6 +65,8 @@ Route::middleware('auth')->group(function () {
 
     //Motor
     Route::resource('motor', MotorController::class);
+    Route::get('/motor-pdf', [MotorController::class, 'motorPDF']);
+    Route::get('/motor-excel', [MotorController::class, 'motorExcel']);
 
     //Pelanggan
     Route::resource('pelanggan', ControllerPelanggan::class);
@@ -90,13 +92,19 @@ Route::middleware('auth')->group(function () {
 
     //Supplier
     Route::resource('supplier', SupplierController::class);
+    Route::get('/supplier-pdf', [SupplierController::class, 'supplierPDF']);
+    Route::get('/supplier-excel', [SupplierController::class, 'supplierExcel']);
 
     //service
     Route::resource('service', ServiceController::class);
+    Route::get('/service-pdf', [ServiceController::class, 'servicePDF']);
+    Route::get('/service-excel', [ServiceController::class, 'serviceExcel']);
 
     //Detail Service
     Route::resource('detailservice', DetailServiceController::class);
     Route::get('confirm/{id}/service', [DetailServiceController::class, 'confirm'])->name('confirm_service');
+    Route::get('/detailservice-pdf', [DetailServiceController::class, 'detailservicePDF']);
+    Route::get('/detailservice-excel', [DetailServiceController::class, 'detailserviceExcel']);
 
     //data Pembayaran
     Route::get('data-pembayaran', [DataPembayaranController::class, 'index'])->name('index-pembayaran');

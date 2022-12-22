@@ -47,7 +47,7 @@
                                 <tr>
                                     <td style="width: 150px">total Harga</td>
                                     <td style="width: 40px">:</td>
-                                    <td>{{ $data->total_harga }}</td>
+                                    <td>Rp. {{ number_format($data->total_harga, 0,',',',') }}</td>
                                 </tr>
                                 <tr>
                                     <td style="width: 150px">Status</td>

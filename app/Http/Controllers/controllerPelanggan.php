@@ -15,7 +15,8 @@ class controllerPelanggan extends Controller
 {
     public function index()
     {
-        $ar_pelanggan = PelangganDB::table('pelanggan')->get();
+        // $ar_pelanggan = PelangganDB::table('pelanggan')->get();
+        $ar_pelanggan = Pelanggan::with('motor')->paginate(5);
         return view('admin.pelanggan.index', compact('ar_pelanggan'));
     }
 

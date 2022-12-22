@@ -10,7 +10,7 @@
                         @csrf
                         <div class="form-group">
                             <label>Nama Pelanggan</label>
-                            <select class="form-control main w-25" name="pelanggan_id">
+                            <select class="form-control main w-80" name="pelanggan_id">
                                 <option disabled value selected>-- Pilih Nama Pelanggan --</option>
                                 @foreach ($pelanggan as $plgn)
                                     <option value="{{ $plgn->id }}">{{ $plgn->nama_pelanggan }}</option>
@@ -36,7 +36,7 @@
                         </div> --}}
                         <div class="form-group">
                             <label>Jenis Service</label>
-                            <select class="form-control main w-25" name="service_id">
+                            <select class="form-control main w-80" name="service_id">
                                 <option disabled value selected>-- Pilih Jenis Service --</option>
                                 @foreach ($service as $srv)
                                     <option value="{{ $srv->id }}">{{ $srv->nama_service }}</option>
@@ -47,10 +47,10 @@
                             <label for="exampleInputEmail1">Spare Part</label>
                             <div class="form-group increment">
                                 <div class="input-group">
-                                    <select name="spare[]" class="form-control form-control-lg">
+                                    <select name="spare[]" class="form-control form-control-md">
                                         <option disabled selected>Pilih Spare Part</option>
                                         @foreach ($spare_part as $item)
-                                            <option value="{{ $item->id }}">{{ $item->merek }}</option>
+                                            <option value="{{ $item->id }}">{{$item->nama_sparepart}} {{ $item->merek }}</option>
                                         @endforeach
                                     </select>
                                     <div class="input-group-append">
@@ -78,7 +78,7 @@
                         </div>
                         <div class="form-group">
                             <label>Nama Montir</label>
-                            <select class="form-control main w-25" name="montir_id">
+                            <select class="form-control main w-80" name="montir_id">
                                 <option disabled value selected>-- Pilih Nama Montir --</option>
                                 @foreach ($montir as $mtr)
                                     <option value="{{ $mtr->id }}">{{ $mtr->nama }}</option>
@@ -94,11 +94,12 @@
                             <input type="text" name="total_harga" class="form-control">
                         </div> --}}
                         <div class="form-group mt-2">
+                            <a class="btn btn-info" title="Kembali" href=" {{ route('detailservice.index') }}">
+                                <i class="bi bi-arrow-left-square"></i>Kembali
+                            </a>
                             <button type="submit" class="btn btn-primary" onclick="myallert()"> Simpan </button>
                         </div>
                         <div class="form-group mt-2">
-                            <a href="{{ route('detailservice.index') }}">
-                                << </a>
                         </div>
                     </form>
                 </div>

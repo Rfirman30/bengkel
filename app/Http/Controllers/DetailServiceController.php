@@ -14,6 +14,9 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB as DetailDB;
+use PDF;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\DetailServiceExport;
 
 class DetailServiceController extends Controller
 {
@@ -40,7 +43,7 @@ class DetailServiceController extends Controller
         $service = Service::all();
         $montir = Montir::all();
         $motor = Motor::all();
-        $spare_part = Sparepart::where('stok', '>', 0)->get();
+        $spare_part = Sparepart::get();
         return view('admin.detail_service.create', compact('pelanggan', 'service', 'spare_part', 'montir', 'motor'));
     }
 
@@ -150,5 +153,17 @@ class DetailServiceController extends Controller
 
         return redirect()->route('detailservice.index')
             ->with('success', 'Sukses menyelesaikan pesanan');
+    }
+
+    public function detailservicePDF()
+    {
+        $detailservice = DetailService::all();
+        $pdf = PDF::loadView('admin.detail_service.detailservicePDF', ['detailservice'=>$detailservice]);
+        return $pdf->download('data_detailservice.pdf');
+    }
+
+    public function detailserviceExcel()
+    {
+        return Excel::download(new DetailServiceExport, 'data_detail_service.xlsx');
     }
 }
