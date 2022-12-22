@@ -6,6 +6,9 @@ use App\Models\Motor;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use PDF;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\MotorExport;
 
 class MotorController extends Controller
 {
@@ -106,5 +109,17 @@ class MotorController extends Controller
         $motor->delete();
         return redirect()->route('motor.index')
             ->with('success', 'Data Motor berhasil dihapus');
+    }
+
+    public function motorPDF()
+    {
+        $motor = Motor::all();
+        $pdf = PDF::loadView('admin.motor.motorPDF', ['motor'=>$motor]);
+        return $pdf->download('data_motor.pdf');
+    }
+
+    public function motorExcel()
+    {
+        return Excel::download(new MotorExport, 'data_motor.xlsx');
     }
 }

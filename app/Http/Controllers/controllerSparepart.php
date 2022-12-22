@@ -153,8 +153,8 @@ class controllerSparepart extends Controller
 
     public function sparepartPDF()
     {
-        $sparepart = SparepartDB::all();
-        $pdf = PDF::loadView('admin.sparepart.sparepartPDF', ['sparepart' => $sparepart]);
+        $sparepart = Sparepart::all();
+        $pdf = PDF::loadView('admin.sparepart.sparepartPDF', ['sparepart'=>$sparepart]);
         return $pdf->download('data_sparepart.pdf');
     }
 

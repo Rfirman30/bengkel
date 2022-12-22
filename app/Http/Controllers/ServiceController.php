@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Service;
 use Illuminate\Http\Request;
+use PDF;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\ServiceExport;
 
 class ServiceController extends Controller
 {
@@ -101,5 +104,17 @@ class ServiceController extends Controller
         $service->delete();
         return redirect()->route('service.index')
             ->with('success', 'Data service berhasil dihapus');
+    }
+
+    public function servicePDF()
+    {
+        $service = Service::all();
+        $pdf = PDF::loadView('admin.service.servicePDF', ['service'=>$service]);
+        return $pdf->download('data_service.pdf');
+    }
+
+    public function serviceExcel()
+    {
+        return Excel::download(new ServiceExport, 'data_service.xlsx');
     }
 }

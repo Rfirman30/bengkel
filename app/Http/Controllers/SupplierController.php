@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Supplier;
 use Illuminate\Http\Request;
+use PDF;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\SupplierExport;
 
 class SupplierController extends Controller
 {
@@ -103,5 +106,17 @@ class SupplierController extends Controller
         $supplier->delete();
         return redirect()->route('supplier.index')
             ->with('success', 'Data Supplier berhasil dihapus');
+    }
+
+    public function supplierPDF()
+    {
+        $supplier = Supplier::all();
+        $pdf = PDF::loadView('admin.supplier.supplierPDF', ['supplier'=>$supplier]);
+        return $pdf->download('data_supplier.pdf');
+    }
+
+    public function supplierExcel()
+    {
+        return Excel::download(new SupplierExport, 'data_supplier.xlsx');
     }
 }
