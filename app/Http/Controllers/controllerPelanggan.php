@@ -35,7 +35,6 @@ class controllerPelanggan extends Controller
             'nama_pelanggan' => request('nama_pelanggan'),
             'no_ktp' => request('no_ktp'),
             'alamat_pelanggan' => request('alamat_pelanggan'),
-            'motor_id' => request('motor_id')
         ]);
 
         return redirect()->route('pelanggan.index')
@@ -60,13 +59,11 @@ class controllerPelanggan extends Controller
             'nama_pelanggan' => ['required'],
             'no_ktp' => ['required'],
             'alamat_pelanggan' => ['required'],
-            'motor_id' => ['required']
         ]);
         $pelanggan->update([
             'nama_pelanggan' => $request->nama_pelanggan,
             'no_ktp' => $request->no_ktp,
             'alamat_pelanggan' => $request->alamat_pelanggan,
-            'motor_id' => $request->motor_id
         ]);
 
         return redirect()->route('pelanggan.index')

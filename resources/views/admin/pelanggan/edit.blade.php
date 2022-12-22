@@ -21,15 +21,6 @@
                             <label for="NAMA">ALAMAT PELANGGAN</label>
                             <textarea class="form-control" name="alamat_pelanggan" placeholder="Ex : jakarta selatan, jalan zeni TNI AD V">{{ $pelanggan->alamat_pelanggan }}</textarea>
                         </div>
-                        <div class="form-group">
-                            <label>Plat MOTOR</label>
-                            <select class="form-control main w-25" name="motor_id">
-                                    <option>-- Pilih Plat Motor --</option>
-                                    @foreach ($ar_motor as $motor)
-                                    <option value="{{$motor->id}}" {{$pelanggan->motor_id == $motor->id ? 'selected' : '' }}>{{$motor->nomor_motor}}</option>
-                                    @endforeach
-                            </select>
-                        </div>
                         <div class="form-group mt-2">
                         <a class="btn btn-info" title="Kembali" href=" {{ url('/pelanggan') }}">
                             <i class="bi bi-arrow-left-square"> Kembali</i>

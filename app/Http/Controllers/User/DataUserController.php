@@ -27,7 +27,7 @@ class DataUserController extends Controller
         }
 
         if ($request->ajax()) {
-            $pelanggan = Pelanggan::where('user_id', Auth::user()->id)->with('motor')->get();
+            $pelanggan = Pelanggan::where('user_id', Auth::user()->id)->get();
             return DataTables::of($pelanggan)
                 ->addIndexColumn()
                 ->addColumn('action', function ($row) {
@@ -55,11 +55,15 @@ class DataUserController extends Controller
             'alamat_pelanggan' => 'required',
             'nama_pelanggan' => 'required',
             'no_ktp' => 'required',
-            'motor_id' => 'required',
         ]);
 
         $data = User::find(Auth::user()->id);
-        $data->dataPelanggan()->create($request->all());
+        if ($data->dataPelanggan()->first()) {
+            return redirect()->route('index-pelanggan')->with('success', 'Data Pelanggan sudah ada');
+        } else {
+            $data->dataPelanggan()->create($request->all());
+        }
+
 
         return redirect()->back()->with('success', 'success add data');
     }
