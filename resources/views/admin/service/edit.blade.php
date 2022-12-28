@@ -16,7 +16,7 @@
                 </div>
                 @endif
                 <div class="col-lg-8">
-                    <form action="{{ route('service.store') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('service.update', $service->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <div class="form-group">

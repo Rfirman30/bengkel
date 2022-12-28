@@ -47,7 +47,7 @@ Route::get('/data-admin', function () {
 
 Route::middleware('auth')->group(function () {
 
-    Route::get('/adm', [HomeController::class, 'index']);
+    Route::get('/adm', [HomeController::class, 'index'])->name('dashboard');
 
 
     //MONTIR

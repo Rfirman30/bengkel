@@ -28,7 +28,7 @@
             <ul>
                 @auth
                     <li>
-                        <a class="nav-link scrollto" href="/adm"
+                        <a class="nav-link scrollto" href="{{route('dashboard')}}"
                         <i class="bi bi-arrow-right-square"></i>{{ auth()->user()->name }}</a>
                     </li>
                 @else

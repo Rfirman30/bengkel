@@ -62,4 +62,5 @@ class User extends Authenticatable
     {
         return $this->hasMany(Motor::class, 'user_id', 'id');
     }
+    
 }
